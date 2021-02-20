@@ -6,8 +6,8 @@ using namespace std;
 
 class Buffer {
 public:
-    Buffer( string message ) {
-        this->message = message;
+    Buffer( string enteredMessage ) {
+        this->message = enteredMessage;
     };
     void writeToDocument() {
         ofstream write ("../bufferWrite/buffer.txt", ios::out | ios::app);
@@ -26,7 +26,7 @@ private:
 int main() {
     string message;
     cout << "Enter the message: ";
-    cin >> message;
+    getline(cin, message);
     Buffer buffer(message);
     buffer.writeToDocument();
     return 0;
